@@ -33,6 +33,14 @@
 
 }
 
+.postImage {
+    flex: 1;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 
 
 .postCategories {
@@ -60,8 +68,8 @@
     font-size: 1rem;
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
 
 }
