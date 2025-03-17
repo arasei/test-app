@@ -14,7 +14,7 @@ export const HomeDetail = () => {
 
   return (
     <div className={classes.Container}>
-        <div className={classes.post}>
+      <div className={classes.post}>
           <div className={classes.postImage}>
             <img src={post.thumbnailUrl} alt=""/>
           </div>
@@ -36,7 +36,7 @@ export const HomeDetail = () => {
             <div className={classes.postTitle}>{post.title}</div>
             <div className={classes.postBody}dangerouslySetInnerHTML={{ __html: post.content }}/>
           </div>
-        </div>
+      </div>
     </div>
   );
 };
