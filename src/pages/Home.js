@@ -1,9 +1,33 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react'
 import classes from '../css/Home.module.css';
 import { Link } from 'react-router-dom';
-import { posts } from '../data/posts'
+
 
 export const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    const fetcher = async () => {
+      try {
+        const res = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts`);
+        const data = await res.json();
+        console.log("取得記事:", data);
+        setPosts(data.posts);
+      } catch (error) {
+        console.error("記事一覧の取得に失敗", error);
+      }
+      setLoading(false);
+    };
+
+    fetcher();
+  },[]);
+
+  if (loading) {
+    return <div>読み込み中...</div>
+  }
+
   return (
     <div className="">
       <div className={classes.container}>
@@ -40,5 +64,5 @@ export const Home = () => {
         </ul>
       </div>
     </div>
-  )
+  );
 }
