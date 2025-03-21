@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Home = () => {
-  const [posts, setPosts] = useState([null]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
