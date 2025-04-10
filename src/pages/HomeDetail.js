@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import classes from '../css/Detail.module.css';
+import classes from '../css/Home.module.css';
 
 
 export const HomeDetail = () => {
