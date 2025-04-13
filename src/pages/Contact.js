@@ -81,11 +81,13 @@ export const Contact = () => {
     <div className={classes.contactForm}>
       <form onSubmit={handleSubmit}>
         <h2>問い合わせフォーム</h2>
-        <div className={classes.formColumn}>
-          {/* 名前 */}
-          <label>
-            <dt>お名前</dt>
-            <dd>
+        <div>
+          <div className={classes.formColumn}>
+            {/* 名前 */}
+            <label htmlFor="name">
+              お名前
+            </label>
+            <div className={classes.formFormat}>
               <input 
                 type="text"
                 id="name"
@@ -94,15 +96,17 @@ export const Contact = () => {
                 onChange={handleChange}
                 disabled={isSubmitting}
               />
-            </dd>
-            {/*エラーメッセージ*/}
-            {errors.name && <p className={classes.formError}>{errors.name}</p>}
-          </label>
+              {/*エラーメッセージ*/}
+              {errors.name && <p className={classes.formError}>{errors.name}</p>}
+            </div>
+          </div>
 
+          <div className={classes.formColumn}>
           {/*メールアドレス*/}
-          <label>
-            <dt>メールアドレス</dt>
-            <dd>
+            <label htmlFor="email">
+              メールアドレス
+            </label>
+            <div className={classes.formFormat}>
               <input 
                 type="email"
                 id="email"
@@ -110,15 +114,17 @@ export const Contact = () => {
                 onChange={handleChange}
                 disabled={isSubmitting}
               />
-            </dd>
-            {/*エラーメッセージ*/}
-            {errors.email && <p className={classes.formError}>{errors.email}</p>}
-          </label>
+              {/*エラーメッセージ*/}
+              {errors.email && <p className={classes.formError}>{errors.email}</p>}
+            </div>
+          </div>
 
+          <div className={classes.formColumn}>
           {/*本文*/}
-          <label>
-            <dt>本文</dt>
-            <dd>
+            <label htmlFor="message">
+              本文
+            </label>
+            <div className={classes.formFormat}>
               <textarea
                 id="message"
                 maxLength="500"
@@ -127,13 +133,13 @@ export const Contact = () => {
                 disabled={isSubmitting}
                 rows="10"
               />
-            </dd>
-            {/*エラーメッセージ*/}
-            {errors.message && <p className={classes.formError}>{errors.message}</p>}
-          </label>
+              {/*エラーメッセージ*/}
+              {errors.message && <p className={classes.formError}>{errors.message}</p>}
+            </div>
+          </div>
         
           {/*送信ボタン*/}
-          <div className={classes.btn}>
+          <div className={classes.formBtn}>
             <button
               type="submit"
               disabled={isSubmitting}
